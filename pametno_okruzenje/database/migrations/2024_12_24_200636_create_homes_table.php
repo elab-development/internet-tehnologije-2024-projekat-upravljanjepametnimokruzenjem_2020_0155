@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->integer('size');
             $table->timestamps();
         });
     }

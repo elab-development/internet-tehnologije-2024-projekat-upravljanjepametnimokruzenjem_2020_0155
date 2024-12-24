@@ -17,6 +17,8 @@ class HomeFactory extends Factory
     public function definition(): array
     {
         return [
+            'address' => fake()->address(),
+            'size' => fake()->numberBetween(15,400),
             //
         ];
     }
