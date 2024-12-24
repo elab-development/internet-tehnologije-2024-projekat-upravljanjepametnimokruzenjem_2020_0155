@@ -9,4 +9,18 @@ class Room extends Model
 {
     /** @use HasFactory<\Database\Factories\RoomFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name', 
+        'size',
+        'home_id',
+    ];
+
+    public function home(){
+        return $this->belongsTo(Home::class);
+    }
+
+    public function settings(){
+        return $this->hasMany(Settings::class);
+    }
 }

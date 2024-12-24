@@ -9,4 +9,14 @@ class Resident extends Model
 {
     /** @use HasFactory<\Database\Factories\ResidentFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'privilege',
+        'home_id',
+    ];
+
+    public function home(){
+        return $this->belongsTo(Home::class);
+    }
 }

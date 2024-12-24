@@ -9,4 +9,18 @@ class Home extends Model
 {
     /** @use HasFactory<\Database\Factories\HomeFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'address',
+        'size',
+    ];
+
+    public function rooms(){
+        return $this->hasMany(Room::class);
+    }
+
+    public function residents(){
+        return $this->hasMany(Resident::class);
+    }
+
 }
